@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2019 at 06:48 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Dec 19, 2020 at 08:16 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,7 +31,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `attendanceadd` (
   `date` varchar(30) NOT NULL,
   `Enroll` varchar(15) NOT NULL,
-  `name` varchar(20) NOT NULL,
   `attend` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -39,15 +38,62 @@ CREATE TABLE `attendanceadd` (
 -- Dumping data for table `attendanceadd`
 --
 
-INSERT INTO `attendanceadd` (`date`, `Enroll`, `name`, `attend`) VALUES
-('08-10-19', '12345', '', 'P'),
-('08-10-19', '2924', '', 'P'),
-('08-10-19', '3324', '', 'A'),
-('08-10-19', '3453453', '', 'P'),
-('08-10-19', '3724', '', 'A'),
-('08-10-19', '767', '', 'P'),
-('08-10-19', '98789', '', 'P'),
-('08-10-19', '999', '', 'A');
+INSERT INTO `attendanceadd` (`date`, `Enroll`, `attend`) VALUES
+('02-12-20', '1', 'P'),
+('02-12-20', '2', 'P'),
+('02-12-20', '3', 'P'),
+('02-12-20', '4', 'A'),
+('02-12-20', '5', 'P'),
+('02-12-20', '120', 'A'),
+('02-12-20', '120', 'P'),
+('02-12-20', '121', 'P'),
+('03-12-20', '120', 'P'),
+('03-12-20', '121', 'P'),
+('03-12-20', '122', 'P'),
+('17-12-20', '1', 'P'),
+('17-12-20', '2', 'P'),
+('17-12-20', '3', 'P'),
+('17-12-20', '4', 'P'),
+('17-12-20', '5', 'P'),
+('17-12-20', '7', 'P'),
+('17-12-20', '10', 'P'),
+('17-12-20', '11', 'P'),
+('17-12-20', '110', 'P'),
+('17-12-20', '111', 'P'),
+('17-12-20', '112', 'P'),
+('17-12-20', '120', 'P'),
+('17-12-20', '121', 'P'),
+('17-12-20', '122', 'A'),
+('18-12-20', '1', 'P'),
+('18-12-20', '2', 'P'),
+('18-12-20', '3', 'P'),
+('18-12-20', '4', 'P'),
+('18-12-20', '5', 'P'),
+('18-12-20', '7', 'P'),
+('18-12-20', '10', 'P'),
+('18-12-20', '11', 'A'),
+('18-12-20', '12', 'A'),
+('18-12-20', '110', 'A'),
+('18-12-20', '111', 'A'),
+('18-12-20', '112', 'A'),
+('18-12-20', '120', 'A'),
+('18-12-20', '121', 'P'),
+('18-12-20', '122', 'P'),
+('18-12-20', '1', 'P'),
+('18-12-20', '2', 'P'),
+('18-12-20', '3', 'P'),
+('18-12-20', '4', 'P'),
+('18-12-20', '5', 'P'),
+('18-12-20', '7', 'P'),
+('18-12-20', '10', 'A'),
+('18-12-20', '11', 'A'),
+('18-12-20', '12', 'A'),
+('18-12-20', '110', 'A'),
+('18-12-20', '111', 'P'),
+('18-12-20', '112', 'A'),
+('18-12-20', '120', 'A'),
+('18-12-20', '121', 'P'),
+('18-12-20', '122', 'P');
 
 -- --------------------------------------------------------
 
@@ -68,15 +114,21 @@ CREATE TABLE `information` (
 
 INSERT INTO `information` (`Enroll`, `name`, `course`, `Semester`) VALUES
 ('', '', '', ''),
-('12345', 'abcde', 'BCA', '5'),
-('2924', 'preeti gupta', 'BCA', '5'),
-('3324', 'rishu', 'BCA', '5'),
-('3453453', 'ankit', 'BCA', '5'),
-('3724', 'shivam yadav', 'BCA', '5'),
-('7568', 'heera', 'BCA', '5'),
-('767', 'rupal', 'BCA', '5'),
-('98789', 'babes', 'BCA', '5'),
-('999', 'salman', 'BCA', '5');
+('001', 'Agrima Suri', 'MCA', '1'),
+('002', 'Ashi', 'MCA', '1'),
+('003', 'Pooja Phogat', 'MCA', '1'),
+('004', 'Geetanshu', 'MCA', '1'),
+('005', 'Radhika Gupta', 'MCA', '1'),
+('007', 'shalini', 'MCA', '1'),
+('010', 'gunjan sharma', 'MCA', '1'),
+('011', 'Priya', 'MCA', '1'),
+('012', 'Deeksha', 'BCA', '1'),
+('110', 'piyush', 'MCA', '1'),
+('111', 'Priypal', 'MCA', '1'),
+('112', 'Ayushi mann', 'MCA', '1'),
+('120', 'Depak', 'BCA', '1'),
+('121', 'nisha', 'BCA', '1'),
+('122', 'shivani', 'MCA', '1');
 
 -- --------------------------------------------------------
 
@@ -96,14 +148,30 @@ CREATE TABLE `teacherinfo` (
 --
 
 INSERT INTO `teacherinfo` (`username`, `password`, `fname`, `faculty`) VALUES
-('ram', '12345', 'ram kishan', 'HOD'),
-('ram', '12345', 'ram kishan', 'HOD'),
-('ramesh', '123', 'ramesh saahu', 'Lecturer'),
+('', '', '', ''),
+('Nisha', 'nisha34', 'Nisha Singh', 'Lab Assistent'),
+('123astha', '123', 'Astha Pal', 'Lab Assistent'),
+('Preeti435', 'preeti', 'Preeti Gupta', 'Lecturer'),
 ('', '', '', ''),
 ('', '', '', ''),
-('sukhi', '1234', 'sukhdev', 'Lecturer'),
-('akki', 'ankit', 'ankit raj', 'Lecturer'),
-('jay', 'jayshree', 'jay shree pal', 'Lab Assistent');
+('rekha', 'rekha12', 'rekha sharma', 'Lecturer'),
+('', '', '', ''),
+('reetu', '12345', 'Reetu Singh', 'Lecturer'),
+('', '', '', ''),
+('Shii', '1234', 'shiii sharma', 'Lecturer'),
+('', '', '', ''),
+('Muskan ', '12345', 'Muskan Sharma ', 'Lecturer'),
+('dua_vanshika', '123456789', 'vanshika priya', 'Lab Assistent'),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('', '', '', ''),
+('priyanshu', '123456', 'Priyanshu Singh', 'Lecturer'),
+('', '', '', ''),
+('priyah', '12345', 'Priya Singh', 'Lecturer');
 
 --
 -- Indexes for dumped tables
@@ -130,6 +198,8 @@ ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `username` (`username`);
 ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `fname` (`fname`);
 ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `faculty` (`faculty`);
 ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `password` (`password`);
+ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `username_2` (`username`);
+ALTER TABLE `teacherinfo` ADD FULLTEXT KEY `fname_2` (`fname`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
